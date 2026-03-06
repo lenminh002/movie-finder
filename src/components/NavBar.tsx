@@ -6,6 +6,9 @@ function NavBar() {
             <div className="logo">
                 <h3>Movie Finder</h3>
             </div>
+            <div className="search-bar">
+                <input type="text" placeholder="Search" />
+            </div>
             <div className="nav-links">
                 <ul>
                     <li>Home</li>

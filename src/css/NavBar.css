@@ -10,11 +10,14 @@
     position: sticky;
     top: 0;
     z-index: 100;
+
+    margin-bottom: 2rem;
 }
 
 .logo {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .nav-links ul {
@@ -30,4 +33,20 @@
 
 .nav-links li:hover {
     color: #ccc;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    width: 40rem;
+    height: 2rem;
+    padding-left: 2rem;
+    margin-left: 5rem;
 }
