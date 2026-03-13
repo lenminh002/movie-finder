@@ -16,6 +16,6 @@ Features:
 
 - TypeScript
 
-- Tailwind CSS
+- CSS
 
 - TMDB API
