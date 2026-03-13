@@ -1,4 +1,3 @@
-import NavBar from '../components/NavBar'
 import MovieCard from '../components/MovieCard'
 import { useState, useEffect } from "react"
 import { getPopularMovies } from '../services/api'
@@ -13,7 +12,6 @@ function Home() {
     }, []);
     return (
         <>
-            <NavBar />
             <main className="main-container">
                 {movies.map((movie: any) => (
                     <MovieCard key={movie.id} movie={movie} />

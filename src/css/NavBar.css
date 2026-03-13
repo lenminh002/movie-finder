@@ -26,12 +26,14 @@
     margin-right: 1.5rem;
 }
 
-.nav-links li {
+.nav-link {
     margin-left: 3rem;
     cursor: pointer;
+    text-decoration: none;
+    color: #fff;
 }
 
-.nav-links li:hover {
+.nav-link:hover {
     color: #ccc;
 }
 
