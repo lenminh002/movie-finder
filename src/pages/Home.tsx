@@ -1,15 +1,27 @@
 import MovieCard from '../components/MovieCard'
 import { useState, useEffect } from "react"
-import { getPopularMovies } from '../services/api'
+import { useSearchParams } from "react-router-dom"
+import { getPopularMovies, searchMovies } from '../services/api'
 import '../css/Home.css'
 
 function Home() {
     const [movies, setMovies] = useState([]);
+    const [searchParams] = useSearchParams();
+    const query = searchParams.get("q");
+
     useEffect(() => {
-        getPopularMovies().then((data) => {
-            setMovies(data.results);
-        });
-    }, []);
+        if (query) {
+            searchMovies(query).then((data) => {
+                setMovies(data);
+            });
+        }
+        else {
+            getPopularMovies().then((data) => {
+                setMovies(data.results);
+            });
+        }
+    }, [query])
+
     return (
         <>
             <main className="main-container">
