@@ -9,15 +9,20 @@ function Home() {
     const [searchParams] = useSearchParams();
     const query = searchParams.get("q");
 
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
+        setLoading(true);
         if (query) {
             searchMovies(query).then((data) => {
                 setMovies(data);
+                setLoading(false);
             });
         }
         else {
             getPopularMovies().then((data) => {
                 setMovies(data.results);
+                setLoading(false);
             });
         }
     }, [query])
@@ -25,9 +30,13 @@ function Home() {
     return (
         <>
             <main className="main-container">
-                {movies.map((movie: any) => (
-                    <MovieCard key={movie.id} movie={movie} />
-                ))}
+                {loading ? (
+                    <p>Loading...</p>
+                ) : (
+                    movies.map((movie: any) => (
+                        <MovieCard key={movie.id} movie={movie} />
+                    ))
+                )}
             </main>
         </>
     )
